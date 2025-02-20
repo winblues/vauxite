@@ -2,6 +2,8 @@
 
 A modern and lightweight desktop experience Fedora Atomic Xfce. Batteries included.
 
+![screenshot](https://blue95.neocities.org/vauxite/screenshot.png)
+
 ## From Other Atomic Desktops
 If you are currently using an atomic desktop, you can rebase to the latest vauxite image.
 
@@ -12,7 +14,7 @@ If you are currently using an atomic desktop, you can rebase to the latest vauxi
 - Reboot and then rebase to the signed image, like so:
   ```
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/winblues/vauxite:latest
-
+  ```
 It is recommended to create a new user after rebasing.
 
 ## Shoutouts
