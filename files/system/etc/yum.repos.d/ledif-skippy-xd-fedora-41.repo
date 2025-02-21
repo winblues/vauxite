@@ -1,0 +1,10 @@
+[copr:copr.fedorainfracloud.org:ledif:skippy-xd]
+name=Copr repo for skippy-xd owned by ledif
+baseurl=https://download.copr.fedorainfracloud.org/results/ledif/skippy-xd/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/ledif/skippy-xd/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1

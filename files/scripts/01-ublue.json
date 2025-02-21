@@ -2,13 +2,16 @@
     "all": {
         "include": {
             "all": [
+                "ffmpeg",
+                "ffmpeg-libs"
+            ],
+            "vauxite": [
                 "alsa-firmware",
                 "android-udev-rules",
                 "apr",
                 "apr-util",
+                "btop",
                 "distrobox",
-                "ffmpeg",
-                "ffmpeg-libs",
                 "ffmpegthumbnailer",
                 "flatpak-spawn",
                 "fuse",
@@ -22,7 +25,6 @@
                 "htop",
                 "intel-vaapi-driver",
                 "jetbrains-mono-fonts-all",
-                "just",
                 "kernel-tools",
                 "libcamera",
                 "libcamera-tools",

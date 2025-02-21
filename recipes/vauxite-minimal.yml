@@ -1,0 +1,42 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: vauxite-minimal
+description: A modern lightweight atomic desktop
+
+base-image: quay.io/fedora-ostree-desktops/xfce-atomic
+image-version: 41
+
+modules:
+  - type: containerfile
+    containerfiles: ["ublue"]
+
+  - type: files
+    files:
+      - source: system
+        destination: /
+
+  - type: rpm-ostree
+    install:
+      - fastfetch
+      - menulibre
+      - ublue-brew
+      - ublue-fastfetch
+    remove:
+      - firefox
+      - firefox-langpacks
+       
+  - type: script
+    scripts:
+      - 00-image-info.sh
+      - 01-ublue.sh
+      - 02-main.sh
+
+  - type: default-flatpaks
+    notify: true # Send notification after install/uninstall is finished
+    system:
+      # Flathub will be used by default
+      install:
+        - org.mozilla.firefox
+
+  - type: signing
+

@@ -3,7 +3,7 @@
 set -ouex pipefail
 
 IMAGE_VENDOR="winblues"
-IMAGE_NAME="vauxite"
+#IMAGE_NAME="vauxite"
 IMAGE_PRETTY_NAME="Vauxite"
 IMAGE_LIKE="fedora"
 HOME_URL="https://winblues.org/"
@@ -19,7 +19,7 @@ FEDORA_MAJOR_VERSION=41
 BASE_IMAGE_NAME="Xfce Atomic $FEDORA_MAJOR_VERSION"
 BASE_IMAGE="quay.io/fedora-ostree-desktops/xfce-atomic"
 
-cat > $IMAGE_INFO <<EOF
+cat >$IMAGE_INFO <<EOF
 {
   "image-name": "$IMAGE_NAME",
   "image-vendor": "$IMAGE_VENDOR",
@@ -32,7 +32,7 @@ EOF
 
 # OS Release File
 sed -i "s/^VARIANT_ID=.*/VARIANT_ID=$IMAGE_NAME/" /usr/lib/os-release
-sed -i "s/^PRETTY_NAME=.*/PRETTY_NAME=\"${IMAGE_PRETTY_NAME} $VERSION_CODENAME (FROM Fedora ${BASE_IMAGE_NAME^})\"/" /usr/lib/os-release
+sed -i "s/^PRETTY_NAME=.*/PRETTY_NAME=\"${IMAGE_PRETTY_NAME} (FROM Fedora ${BASE_IMAGE_NAME^})\"/" /usr/lib/os-release
 sed -i "s/^NAME=.*/NAME=\"$IMAGE_PRETTY_NAME\"/" /usr/lib/os-release
 sed -i "s|^HOME_URL=.*|HOME_URL=\"$HOME_URL\"|" /usr/lib/os-release
 sed -i "s|^DOCUMENTATION_URL=.*|DOCUMENTATION_URL=\"$DOCUMENTATION_URL\"|" /usr/lib/os-release

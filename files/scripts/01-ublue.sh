@@ -5,8 +5,6 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 sed -i '0,/enabled=1/{s/enabled=1/enabled=1\npriority=90/}' /etc/yum.repos.d/negativo17-fedora-multimedia.repo
 
-# Custom ujusts
-
 # From https://github.com/ublue-os/main/blob/main/packages.sh
 
 # build list of all packages requested for inclusion
