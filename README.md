@@ -2,7 +2,7 @@
 
 A modern and lightweight desktop experience Fedora Atomic Xfce. Batteries included.
 
-![screenshot](https://blue95.neocities.org/vauxite/screenshot.png)
+![screenshot](https://blue95.neocities.org/vauxite/screenshot2.png)
 
 ## From Other Atomic Desktops
 If you are currently using an atomic desktop, you can rebase to the latest vauxite image.
