@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build-image:
-    name: Build main image
+    name: Build image
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -27,6 +27,7 @@ jobs:
       matrix:
         recipe:
           - vauxite.yml
+          - vauxite-base.yml
           - vauxite-minimal.yml
     steps:
       # the build is fully handled by the reusable github action

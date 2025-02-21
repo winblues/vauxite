@@ -1,0 +1,10 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: vauxite-base
+description: A modern lightweight atomic desktop
+
+base-image: quay.io/fedora-ostree-desktops/xfce-atomic
+image-version: 41
+
+modules:
+  - type: signing
