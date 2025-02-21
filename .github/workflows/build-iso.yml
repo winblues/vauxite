@@ -22,12 +22,12 @@ jobs:
         id: iso
         with:
           arch: x86_64
-          image_name: ${{ matrix.recipe }}
+          image_name: ${{ matrix.image }}
           image_repo: ghcr.io/winblues
           image_tag: latest
           version: 41
           variant: xfce
-          iso_name: ${{ matrix.recipe }}-latest.iso
+          iso_name: ${{ matrix.image }}-latest.iso
 
       - name: Upload ISOs and Checksum to R2
         if: github.ref_name == 'main'
