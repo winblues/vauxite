@@ -26,7 +26,6 @@ jobs:
           image_repo: ghcr.io/winblues
           image_tag: latest
           version: 41
-          variant: xfce
           iso_name: ${{ matrix.image }}-latest.iso
 
       - name: Upload ISOs and Checksum to R2

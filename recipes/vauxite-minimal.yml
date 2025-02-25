@@ -21,7 +21,7 @@ modules:
     remove:
       - firefox
       - firefox-langpacks
-       
+
   - type: script
     scripts:
       - 00-image-info.sh
