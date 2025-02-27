@@ -18,13 +18,16 @@ modules:
       - gdb
       - iotop
       - libcanberra
+      - libinput
       - menulibre
       - python3-ramalama
+      - ruby
       - skippy-xd
       - strace
       - tailscale
       - ublue-brew
       - ublue-fastfetch
+      - xdotool
     remove:
       - firefox
       - firefox-langpacks

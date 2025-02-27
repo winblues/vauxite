@@ -1,5 +1,8 @@
 test-local:
-  bluebuild rebase --tempdir /var/tmp recipes/recipe.yml
+  bluebuild rebase --tempdir /var/tmp recipes/vauxite.yml
+
+build:
+  bluebuild build --tempdir /var/tmp recipes/vauxite.yml
 
 generate-iso:
   sudo bluebuild generate-iso --iso-name vauxite-latest.iso image ghcr.io/winblues/vauxite:latest
