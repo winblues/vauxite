@@ -13,6 +13,7 @@ if systemctl list-unit-files skippy-xd.service; then
 fi
 
 curl -L -o /usr/bin/xfconf-profile https://github.com/winblues/xfconf-profile/releases/latest/download/xfconf-profile-linux-amd64
+chmod +x /usr/bin/xfconf-profile
 
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/tailscale.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/negativo17-fedora-multimedia.repo
