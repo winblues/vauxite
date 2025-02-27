@@ -3,3 +3,6 @@ test-local:
 
 generate-iso:
   sudo bluebuild generate-iso --iso-name vauxite-latest.iso image ghcr.io/winblues/vauxite:latest
+
+generate-local-iso:
+  sudo bluebuild generate-iso --tempdir /var/tmp --iso-name vauxite-latest.iso recipe recipes/vauxite-base.yml
