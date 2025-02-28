@@ -12,3 +12,4 @@ curl -L -o /usr/bin/chezmoi https://github.com/twpayne/chezmoi/releases/latest/d
 chmod +x /usr/bin/chezmoi
 
 gem install fusuma
+mv /usr/local/bin/fusuma /usr/bin/fusuma
