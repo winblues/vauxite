@@ -46,7 +46,8 @@ modules:
       - 00-image-info.sh
       - 01-ublue-main.sh
       - 02-ublue-packages.sh
-      - 10-main.sh
+      - 10-core.sh
+      - 11-main.sh
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished
