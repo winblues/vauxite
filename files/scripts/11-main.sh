@@ -2,7 +2,7 @@
 
 set -ouex pipefail
 
-systemctl --global enable skippy-xd.service
+# TODO: use systemd-tmpfiles for this
 echo "KillUserProcesses=yes" >>/usr/lib/systemd/logind.conf
 
 curl -L -o /usr/bin/xfconf-profile https://github.com/winblues/xfconf-profile/releases/latest/download/xfconf-profile-linux-amd64
