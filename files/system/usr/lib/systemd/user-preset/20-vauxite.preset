@@ -1,1 +1,2 @@
 enable skippy-xd.service
+enable fusuma.service
