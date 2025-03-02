@@ -3,6 +3,6 @@
 set -euo pipefail
 
 image="$1"
-#rpm-ostree rebase "ostree-unverified-registry:ghcr.io/winblues/${image}:latest"
+rpm-ostree rebase "ostree-unverified-registry:ghcr.io/winblues/${image}:latest"
 aplay <(curl -sL https://archive.org/download/Win95-audio-media/Windows%2095%20audio%20media/TADA.WAV) 2>/dev/null
 read -n 1 -s -r -p "Installation complete! Restart to boot into $image..."

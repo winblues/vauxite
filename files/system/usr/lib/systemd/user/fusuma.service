@@ -1,10 +1,12 @@
 [Unit]
 Description=Multitouch gestures with libinput driver on Linux
-After=graphical-session.target
+After=default.target
 
 [Service]
 ExecStart=/usr/bin/fusuma
 Restart=on-failure
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=%h/.Xauthority
 
 [Install]
 WantedBy=default.target
