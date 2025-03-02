@@ -1,0 +1,12 @@
+[Unit]
+Description=Add default vauxite groups
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/vauxite-groups
+Restart=on-failure
+RestartSec=30
+StartLimitInterval=0
+
+[Install]
+WantedBy=default.target
