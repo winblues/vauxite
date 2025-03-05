@@ -1,10 +1,13 @@
 [Unit]
 Description=Window and workspace switcher daemon
 After=default.target
+Requires=default.target
 
 [Service]
 Type=simple
 ExecStart=/usr/bin/skippy-xd --start-daemon
+Restart=on-failure
+RestartSec=2
 Restart=always
 
 [Install]
