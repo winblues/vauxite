@@ -13,3 +13,5 @@ chmod +x /usr/bin/chezmoi
 
 gem install fusuma
 mv /usr/local/bin/fusuma /usr/bin/fusuma
+
+systemctl --global preset-all
