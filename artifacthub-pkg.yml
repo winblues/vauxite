@@ -1,0 +1,10 @@
+# Artifact Hub package metadata file
+version: 41
+name: vauxite
+displayName: Vauxite
+createdAt: 2025-02-20T00:00:00Z
+description:  A modern and lightweight desktop experience based on Fedora Atomic Xfce
+logoURL: https://avatars.githubusercontent.com/u/200125887?s=200&v=4
+screenshots: # (optional, list of screenshots)
+  - title: Sample screenshot 1
+    url: https://camo.githubusercontent.com/bda68a8bcc9eb4dbb18086bea5fcd9672f80b4a1ae7168c86438754407af1bb4/68747470733a2f2f626c756539352e6e656f6369746965732e6f72672f766175786974652f73637265656e73686f74322e706e67
