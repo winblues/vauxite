@@ -29,6 +29,7 @@ jobs:
           - vauxite.yml
           - vauxite-base.yml
           - vauxite-minimal.yml
+          - vauxite-next.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
