@@ -3,11 +3,11 @@
 set -ouex pipefail
 
 IMAGE_VENDOR="winblues"
-#IMAGE_NAME="vauxite"
+IMAGE_NAME="vauxite"
 IMAGE_PRETTY_NAME="Vauxite"
 IMAGE_LIKE="fedora"
-HOME_URL="https://winblues.org/"
-DOCUMENTATION_URL="https://docs.winblues.org"
+HOME_URL="https://blues.win/vauxite"
+DOCUMENTATION_URL="https://docs.blues.win"
 SUPPORT_URL="https://github.com/winblues/vauxite/issues"
 BUG_SUPPORT_URL="https://github.com/winblues/vauxite/issues"
 VERSION_CODENAME=""
@@ -15,7 +15,7 @@ VERSION_CODENAME=""
 IMAGE_INFO="/usr/share/ublue-os/image-info.json"
 IMAGE_REF="ostree-image-signed:docker://ghcr.io/$IMAGE_VENDOR/$IMAGE_NAME"
 
-FEDORA_MAJOR_VERSION=41
+FEDORA_MAJOR_VERSION=$(awk -F= '/VERSION_ID/ {print $2}' /etc/os-release)
 BASE_IMAGE_NAME="Xfce Atomic $FEDORA_MAJOR_VERSION"
 BASE_IMAGE="quay.io/fedora-ostree-desktops/xfce-atomic"
 
