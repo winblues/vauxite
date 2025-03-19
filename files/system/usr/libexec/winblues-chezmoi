@@ -47,8 +47,13 @@ git config --local user.name "Winblues User"
 git config --local user.email "user@blues.win"
 git add .
 
-booted_image_version=$(rpm-ostree status --json | jq '.deployments[] | select(.booted == true) | .version' | tr -d '"')
-booted_image=$(rpm-ostree status --json | jq '.deployments[] | select(.booted == true) | ."container-image-reference"' | tr -d '"')
+booted_image_version="unknown"
+booted_image="unknown"
+
+if rpm-ostree status; then
+  booted_image_version=$(rpm-ostree status --json | jq '.deployments[] | select(.booted == true) | .version' | tr -d '"')
+  booted_image=$(rpm-ostree status --json | jq '.deployments[] | select(.booted == true) | ."container-image-reference"' | tr -d '"')
+fi
 
 git commit -m "bump: $booted_image_version of $booted_image"
 
