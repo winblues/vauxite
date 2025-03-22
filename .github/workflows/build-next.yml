@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - next
+      - main
   schedule:
     - cron:
         "00 07 * * *" # build at 07:00 UTC every day
