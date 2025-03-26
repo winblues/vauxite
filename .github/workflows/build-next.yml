@@ -7,6 +7,7 @@ on:
   schedule:
     - cron:
         "00 07 * * *" # build at 07:00 UTC every day
+  pull_request:
 concurrency:
   # only run one build at a time
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
