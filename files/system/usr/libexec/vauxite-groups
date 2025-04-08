@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # SCRIPT VERSION
-GROUP_SETUP_VER=1
+GROUP_SETUP_VER=2
 GROUP_SETUP_VER_FILE="/etc/winblues/vauxite-groups"
 GROUP_SETUP_VER_RAN=$(cat "$GROUP_SETUP_VER_FILE")
 
@@ -21,11 +21,11 @@ append_group() {
 }
 
 # Setup Groups
-append_group input
+append_group input libvirt
 
 wheelarray=($(getent group wheel | cut -d ":" -f 4 | tr ',' '\n'))
 for user in $wheelarray; do
-  usermod -aG input $user
+  usermod -aG input libvirt $user
 done
 
 # Prevent future executions

@@ -14,6 +14,43 @@ modules:
 
   - type: rpm-ostree
     install:
+      - audacious
+      - btop
+      - catfish
+      - edk2-ovmf
+      - libvirt
+      - libvirt-nss
+      - libcanberra-gtk3
+      - lightdm-gtk-greeter-settings
+      - mate-disk-usage-analyzer
+      - mate-system-monitor
+      - neovim
+      - orage
+      - patch
+      - podman-compose
+      - podman-machine
+      - python3-cairosvg
+      - plymouth-plugin-script
+      - qemu-char-spice
+      - qemu-device-display-virtio-gpu
+      - qemu-device-display-virtio-vga
+      - qemu-device-usb-redirect
+      - qemu-img
+      - qemu-system-x86-core
+      - qemu-user-binfmt
+      - qemu-user-static
+      - qemu
+      - podman-compose
+      - podman-machine
+      - qemu-char-spice
+      - qemu-device-display-virtio-gpu
+      - qemu-device-display-virtio-vga
+      - qemu-device-usb-redirect
+      - qemu-img
+      - qemu-system-x86-core
+      - qemu-user-binfmt
+      - qemu-user-static
+      - qemu
       - fastfetch
       - gdb
       - iotop
