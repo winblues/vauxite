@@ -51,6 +51,8 @@ modules:
       - qemu-user-binfmt
       - qemu-user-static
       - qemu
+      - strace
+      - virt-manager
       - fastfetch
       - gdb
       - iotop
