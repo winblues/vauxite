@@ -11,8 +11,4 @@ modules:
     files:
       - source: installers
         destination: /
-  - type: script
-    snippets:
-      - "mkdir /etc/skel/Desktop"
-      - "ln -s /usr/share/winblues/installers/blue95-installer.desktop /etc/skel/Desktop/blue95-installer.desktop"
   - type: signing
