@@ -27,6 +27,7 @@ jobs:
           image_tag: latest
           version: 41
           iso_name: ${{ matrix.image }}-latest.iso
+          variant: kinoite
 
       - name: Upload ISOs and Checksum to R2
         if: github.ref_name == 'main'
