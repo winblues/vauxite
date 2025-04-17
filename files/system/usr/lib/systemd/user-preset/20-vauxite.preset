@@ -1,3 +1,5 @@
 enable flatpak-user-update.timer
+enable user-flatpak-setup.timer
+
 enable skippy-xd.service
 enable fusuma.service

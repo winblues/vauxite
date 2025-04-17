@@ -1,3 +1,11 @@
+enable vauxite-groups.service
+
 enable rpm-ostreed-automatic.timer
 enable flatpak-system-update.timer
-enable vauxite-groups.service
+enable system-flatpak-setup.timer
+
+enable libvirtd.service
+enable libvirtd-admin.socket
+enable libvirtd-ro.socket
+enable libvirtd.socket
+
