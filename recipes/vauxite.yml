@@ -66,6 +66,7 @@ modules:
       - tailscale
       - ublue-brew
       - ublue-fastfetch
+      - ublue-os-dx-services
       - xdotool
       # Fix taskbar icons for Xfce 4.20
       - gdk-pixbuf2-modules-extra
