@@ -11,8 +11,8 @@ chmod +x /usr/bin/xfconf-profile
 curl -L -o /usr/bin/chezmoi https://github.com/twpayne/chezmoi/releases/latest/download/chezmoi-linux-amd64
 chmod +x /usr/bin/chezmoi
 
-gem install fusuma
-mv /usr/local/bin/fusuma /usr/bin/fusuma
+gem install fusuma --no-document --install-dir /usr/lib/ruby/gems/fusuma
+ln -s /usr/lib/ruby/gems/fusuma/bin/fusuma /usr/bin/fusuma
 
 systemctl preset-all
 systemctl --global preset-all
