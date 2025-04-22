@@ -2,6 +2,8 @@
 Description=Multitouch gestures with libinput driver on Linux
 After=default.target
 Requires=default.target
+StartLimitIntervalSec=30
+StartLimitBurst=5
 
 [Service]
 ExecStart=/usr/bin/fusuma
