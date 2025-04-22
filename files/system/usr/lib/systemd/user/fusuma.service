@@ -9,6 +9,7 @@ StartLimitBurst=5
 ExecStart=/usr/bin/fusuma
 Restart=on-failure
 RestartSec=2
+Environment=GEM_PATH=/usr/lib/ruby/gems/fusuma
 Environment=DISPLAY=:0
 Environment=XAUTHORITY=%h/.Xauthority
 
