@@ -42,12 +42,12 @@ modules:
       - 95-sanity-check.sh
 
   - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished
-    user: {}
-    system:
-      # Flathub will be used by default
-      install:
-        - org.mozilla.firefox
+    configurations:
+    - notify: true # Send notification after install/uninstall is finished
+        scope: system
+        # Flathub will be used by default
+        install:
+          - org.mozilla.firefox
 
   - type: signing
 
