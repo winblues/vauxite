@@ -16,6 +16,8 @@ ln -s /usr/lib/ruby/gems/fusuma/bin/fusuma /usr/bin/fusuma
 
 dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release{,-extras}
 dnf5 -y install flatpost
+dnf5 -y install firacode-nerd-fonts
+dnf5 -y install nerdfontssymbolsonly-nerd-fonts
 dnf5 -y config-manager setopt "terra*".enabled=false
 
 systemctl preset-all
