@@ -7,7 +7,6 @@
             ],
             "vauxite": [
                 "alsa-firmware",
-                "android-udev-rules",
                 "apr",
                 "apr-util",
                 "distrobox",
@@ -55,7 +54,6 @@
                 "libavcodec",
                 "libcamera-gstreamer",
                 "libheif",
-                "mesa-libxatracker",
                 "openssl",
                 "pipewire-libs-extra",
                 "vim"
