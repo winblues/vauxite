@@ -3,23 +3,10 @@
 name: vauxite
 description: A modern lightweight atomic desktop
 
-base-image: quay.io/fedora-ostree-desktops/base-atomic
+base-image: quay.io/fedora-ostree-desktops/xfce-atomic
 image-version: 43
 
 modules:
-  - type: script
-    scripts:
-      - 000-workarounds.sh
-
-  - type: dnf
-    group-install:
-      with-optional: true
-      packages:
-        - xfce-apps
-        - xfce-desktop
-        - xfce-extra-plugins
-        - xfce-media
-
   - type: files
     files:
       - source: system
