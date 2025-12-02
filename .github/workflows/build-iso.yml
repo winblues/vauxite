@@ -25,7 +25,7 @@ jobs:
           image_name: ${{ matrix.image }}
           image_repo: ghcr.io/winblues
           image_tag: latest
-          version: 41
+          version: 43
           iso_name: ${{ matrix.image }}-latest.iso
           variant: kinoite
 
