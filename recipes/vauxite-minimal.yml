@@ -24,6 +24,13 @@ modules:
       - firefox
       - firefox-langpacks
 
+  - type: default-flatpaks
+    configurations:
+      - notify: true
+        scope: system
+        install:
+          - org.mozilla.firefox
+
   - type: script
     scripts:
       - 00-image-info.sh
@@ -31,13 +38,7 @@ modules:
       - 02-ublue-packages.sh
       - 10-core.sh
       - 95-sanity-check.sh
-
-  - type: default-flatpaks
-    configurations:
-      - notify: true # Send notification after install/uninstall is finished
-        scope: system
-        install:
-          - org.mozilla.firefox
+      - 99-cleanup.sh
 
   - type: signing
 

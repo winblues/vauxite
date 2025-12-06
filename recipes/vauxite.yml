@@ -12,6 +12,13 @@ modules:
       - source: system
         destination: /
 
+  - type: default-flatpaks
+    configurations:
+      - notify: true # Send notification after install/uninstall is finished
+        scope: system
+        install:
+          - org.mozilla.firefox
+
   - type: rpm-ostree
     install:
       - audacious
@@ -82,21 +89,15 @@ modules:
       - 10-core.sh
       - 11-main.sh
       - 95-sanity-check.sh
+      - 99-cleanup.sh
 
-  - type: default-flatpaks
-    configurations:
-      - notify: true # Send notification after install/uninstall is finished
-        scope: system
-        install:
-          - org.mozilla.firefox
-
-  - type: containerfile
-    snippets:
-    - 'LABEL io.artifacthub.package.readme-url=https://raw.githubusercontent.com/winblues/vauxite/refs/heads/main/README.md'
-    - 'LABEL io.artifacthub.package.logo-url=https://avatars.githubusercontent.com/u/200125887?s=200&v=4'
-    - 'LABEL io.artifacthub.package.deprecated=false'
-    - 'LABEL io.artifacthub.package.keywords=bootc,fedora,aurora,ublue,universal-blue'
-      #- 'LABEL io.artifacthub.package.maintainers=[{\"name\": \"ledif\", \"email\": \"adam@fidel.cloud\"}]'
+  #- type: containerfile
+  #  snippets:
+  #  - 'LABEL io.artifacthub.package.readme-url=https://raw.githubusercontent.com/winblues/vauxite/refs/heads/main/README.md'
+  #  - 'LABEL io.artifacthub.package.logo-url=https://avatars.githubusercontent.com/u/200125887?s=200&v=4'
+  #  - 'LABEL io.artifacthub.package.deprecated=false'
+  #  - 'LABEL io.artifacthub.package.keywords=bootc,fedora,aurora,ublue,universal-blue'
+  #  - 'LABEL io.artifacthub.package.maintainers=[{\"name\": \"ledif\", \"email\": \"adam@fidel.cloud\"}]'
 
   - type: signing
 
