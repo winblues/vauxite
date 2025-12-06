@@ -8,6 +8,8 @@ rm -rf /var/cache/dnf/* 2>/dev/null || true
 rm -rf /var/cache/dnf5/* 2>/dev/null || true
 rm -rf /var/lib/dnf/* 2>/dev/null || true
 
+rm -rf /run/* 2>/dev/null || true
+
 # Clean up Ruby gem cache
 rm -rf /root/.gem 2>/dev/null || true
 rm -rf /tmp/gem* 2>/dev/null || true
