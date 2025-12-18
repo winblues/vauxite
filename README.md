@@ -9,7 +9,12 @@ A modern and lightweight desktop experience based on Fedora Xfce Atomic. Batteri
 
 Downloaded [vauxite-base-latest.iso](https://pub-969fbc86b5f24e4d81c6d022e8fd8dde.r2.dev/vauxite-base-latest.iso), flash it to a USB drive and install from there.
 
-Once installed, you can switch to any of the winblues variants either by using the installers present on the desktop, or by manually running `/usr/lib/winblues-rebase`.
+Once installed, you can switch to any of the other variants with:
+
+```bash
+sudo bootc switch --enforce-container-sigpolicy ghcr.io/winblues/vauxite:latest
+```
+
 ### Image Descriptions
 | Image | Description |
 | ---------- | ----------- |
