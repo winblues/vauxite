@@ -3,7 +3,7 @@
 
 Name:           skippy-xd
 Version:        %{release_version}
-Release:        1%{?dist}
+Release:        2%{?dist}
 Epoch:          1
 Summary:        A window selector for X11 with Exposé and live preview Alt-Tab effects and more
 
