@@ -86,7 +86,7 @@ modules:
       - fluxbox 
       - xterm 
       - rofi 
-      - fd 
+      - fd-find 
       - fzf 
       - zoxide 
       - xsane
