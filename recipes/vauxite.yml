@@ -79,7 +79,6 @@ modules:
       - gdk-pixbuf2-modules-extra
       - mc
       - tigervnc
-      - akmod-nvidia
       - tigervnc-server
       - autossh
       - fluxbox
