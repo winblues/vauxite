@@ -99,6 +99,7 @@ modules:
       - 02-ublue-packages.sh
       - 10-core.sh
       - 11-main.sh
+      - 12-virtualbox.sh
       - 95-sanity-check.sh
       - 99-cleanup.sh
 
