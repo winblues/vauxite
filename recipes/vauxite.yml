@@ -77,18 +77,17 @@ modules:
       - xdotool
       # Fix taskbar icons for Xfce 4.20
       - gdk-pixbuf2-modules-extra
-      - akmod-nvidia
       - mc
       - tigervnc
       - akmod-nvidia
-      - tigervnc-server 
-      - autossh 
-      - fluxbox 
-      - xterm 
-      - rofi 
-      - fd-find 
-      - fzf 
-      - zoxide 
+      - tigervnc-server
+      - autossh
+      - fluxbox
+      - xterm
+      - rofi
+      - fd-find
+      - fzf
+      - zoxide
       - xsane
     remove:
       - firefox
