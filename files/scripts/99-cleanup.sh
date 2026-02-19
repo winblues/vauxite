@@ -1,27 +1,28 @@
 #!/bin/bash
 set -ouex pipefail
 
-find /tmp -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
-find /var/tmp -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+# Clean /tmp
+find /tmp -mindepth 1 -maxdepth 1 -delete 2>/dev/null || true
 
-rm -rf /var/cache/dnf/* 2>/dev/null || true
-rm -rf /var/cache/dnf5/* 2>/dev/null || true
-rm -rf /var/lib/dnf/* 2>/dev/null || true
+# Clean /var/tmp
+find /var/tmp -mindepth 1 -maxdepth 1 -depth -delete 2>/dev/null || true
 
-rm -rf /run/* 2>/dev/null || true
+# Clean DNF caches using find instead of rm
+find /var/cache/dnf/ -mindepth 1 -delete 2>/dev/null || true
+find /var/cache/dnf5/ -mindepth 1 -delete 2>/dev/null || true
+find /var/lib/dnf/ -mindepth 1 -delete 2>/dev/null || true
+find /run/ -mindepth 1 -delete 2>/dev/null || true
 
 # Clean up Ruby gem cache
-rm -rf /root/.gem 2>/dev/null || true
-rm -rf /tmp/gem* 2>/dev/null || true
+find /root/.gem -delete 2>/dev/null || true
+find /tmp/ -name "gem*" -delete 2>/dev/null || true
 
-# The Anaconda installer in derived images complains about stray files in / that
-# shouldn't be there. I have no idea if these files are coming from this image but try
-# to delete them anyway.
-cd /
-rm -f nvim.root 2>/dev/null || true
-rm -f dnf 2>/dev/null || true
-rm -rf selinux-policy 2>/dev/null || true
+# Clean up stray files for Anaconda installer
+find / -maxdepth 1 -name "nvim.root" -delete 2>/dev/null || true
+find / -maxdepth 1 -name "dnf" -delete 2>/dev/null || true
+find / -maxdepth 1 -name "selinux-policy" -delete 2>/dev/null || true
 
-for file in .wget-hsts* .wget-hpkp* .wh.* .*_lck_*; do
-  rm -rf "$file" 2>/dev/null || true
-done
+# Clean up hidden files in current directory (or root if that's where script runs)
+find . -maxdepth 1 \( -name ".wget-hsts*" -o -name ".wget-hpkp*" -o -name ".wh.*" -o -name ".*_lck_*" \) -delete 2>/dev/null || true
+
+echo "cleanup done"
