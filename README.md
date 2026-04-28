@@ -38,4 +38,4 @@ If you are currently using a Fedora atomic desktop, you can simply rebase to any
 ## Shoutouts
 - [BlueBuild](https://github.com/blue-build), [Universal Blue](https://github.com/ublue-os) and [Fedora](https://fedoraproject.org)
 - The [Xfce](https://www.xfce.org/) team
- 
+ - [amelia.svg](https://bsky.app/profile/ameliasvg.bsky.social) for creating Vauxite's logo
