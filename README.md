@@ -1,20 +1,24 @@
-# vauxite &nbsp; [![bluebuild build badge](https://github.com/winblues/vauxite/actions/workflows/build.yml/badge.svg)](https://github.com/winblues/vauxite/actions/workflows/build.yml)
+<p align="center">
+  <img width="400" alt="vauxite" src="https://github.com/user-attachments/assets/abbbe986-7708-4d6a-836a-b837d8a2778e" />
+</p>
 
-A modern and lightweight desktop experience based on Fedora Xfce Atomic. Batteries included.
+<p align="center">
+  <a href="https://github.com/winblues/vauxite/actions/workflows/build.yml">
+    <img src="https://github.com/winblues/vauxite/actions/workflows/build.yml/badge.svg" alt="bluebuild build badge" />
+  </a>
+</p>
 
 ![screenshot](https://blue95.neocities.org/vauxite/screenshot2.png)
 
-
 ## Install
 
-Downloaded [vauxite-base-latest.iso](https://pub-969fbc86b5f24e4d81c6d022e8fd8dde.r2.dev/vauxite-base-latest.iso), flash it to a USB drive and install from there.
+Download [vauxite-base-latest.iso](https://pub-969fbc86b5f24e4d81c6d022e8fd8dde.r2.dev/vauxite-base-latest.iso), flash it to a USB drive and install from there.
 
 Once installed, you can switch to any of the other variants with:
 
 ```bash
 sudo bootc switch --enforce-container-sigpolicy ghcr.io/winblues/vauxite:latest
 ```
-
 ### Image Descriptions
 | Image | Description |
 | ---------- | ----------- |
