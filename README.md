@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="400" alt="vauxite" src="https://github.com/user-attachments/assets/abbbe986-7708-4d6a-836a-b837d8a2778e" />
+  <img width="400" alt="vauxite" src="https://github.com/user-attachments/assets/ca523550-db6d-4c67-97b4-68c2a8923b88" />
 </p>
 
 <p align="center">
