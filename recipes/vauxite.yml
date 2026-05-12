@@ -65,7 +65,7 @@ modules:
       - iotop
       - libcanberra
       - libinput
-      - menulibre
+      - alacarte
       - python3-ramalama
       - ruby
       - skippy-xd

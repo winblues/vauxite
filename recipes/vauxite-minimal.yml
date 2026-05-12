@@ -15,7 +15,7 @@ modules:
   - type: rpm-ostree
     install:
       - fastfetch
-      - menulibre
+      - alacarte
       - ublue-brew
       - ublue-fastfetch
       # Fix taskbar icons for Xfce 4.20
