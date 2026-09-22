@@ -1,0 +1,35 @@
+# Anaconda ISO Installer Configuration
+#
+# This configuration creates a bootable ISO image for installing the Vauxite
+# bootc image. The interactive installer guides users through disk partitioning,
+# user creation, timezone, and other basic system setup.
+
+[customizations.installer.kickstart]
+contents = """
+# Automatic partitioning and networking. Everything else is chosen in Anaconda.
+# bootc-image-builder supplies the ostreecontainer payload line automatically.
+zerombr
+clearpart --all --initlabel --disklabel=gpt
+autopart --noswap --type=btrfs
+network --bootproto=dhcp --device=link --activate --onboot=on
+reboot --eject
+"""
+
+[customizations.installer.modules]
+# Enable standard Anaconda installer modules for a guided installation experience
+enable = [
+  "org.fedoraproject.Anaconda.Modules.Storage",
+  "org.fedoraproject.Anaconda.Modules.Runtime",
+  "org.fedoraproject.Anaconda.Modules.Network",
+  "org.fedoraproject.Anaconda.Modules.Security",
+  "org.fedoraproject.Anaconda.Modules.Services",
+  "org.fedoraproject.Anaconda.Modules.Users",
+  "org.fedoraproject.Anaconda.Modules.Timezone"
+]
+# No subscription to manage for a community image
+disable = [
+  "org.fedoraproject.Anaconda.Modules.Subscription"
+]
+
+[customizations.iso]
+volume_id = "VAUXITE"

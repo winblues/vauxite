@@ -4,3 +4,5 @@ cosign.private
 *swp
 *.iso
 *.iso-CHECKSUM
+/.bluebuild-scripts_*
+flake.*

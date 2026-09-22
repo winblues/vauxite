@@ -1,4 +1,4 @@
-name: generate-iso
+name: Generate ISO
 on:
   schedule:
     - cron:
@@ -17,17 +17,36 @@ jobs:
           - vauxite-base
           - vauxite-minimal
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Build ISO
-        uses: jasonn3/build-container-installer@main
-        id: iso
-        with:
-          arch: x86_64
-          image_name: ${{ matrix.image }}
-          image_repo: ghcr.io/winblues
-          image_tag: latest
-          version: 44
-          iso_name: ${{ matrix.image }}-latest.iso
-          variant: kinoite
+        shell: bash
+        run: |
+          IMAGE="ghcr.io/winblues/vauxite:latest"
+          mkdir -p "$GITHUB_WORKSPACE/output"
+          sudo podman pull "$IMAGE"
+          sudo podman run \
+            --rm \
+            --privileged \
+            --pull=newer \
+            --security-opt label=type:unconfined_t \
+            -v /var/lib/containers/storage:/var/lib/containers/storage \
+            -v "$GITHUB_WORKSPACE/iso/iso.toml:/config.toml:ro" \
+            -v "$GITHUB_WORKSPACE/output:/output" \
+            quay.io/centos-bootc/bootc-image-builder:latest \
+            --type anaconda-iso \
+            --rootfs btrfs \
+            --local \
+            --chown "$(id -u):$(id -g)" \
+            "$IMAGE"
+
+      - name: Rename ISO and Generate Checksum
+        shell: bash
+        run: |
+          mkdir -p output/final
+          find output -name '*.iso' -exec mv {} output/final/${{ matrix.image }}-latest.iso \;
+          cd output/final && sha256sum ${{ matrix.image }}-latest.iso > ${{ matrix.image }}-latest.iso-CHECKSUM
 
       - name: Upload ISOs and Checksum to R2
         if: github.ref_name == 'main'
@@ -42,4 +61,5 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y rclone
-          rclone copyto ${{ steps.iso.outputs.iso_path }} R2:ublue-ledif
+          rclone copyto output/final/${{ matrix.image }}-latest.iso R2:ublue-ledif
+          rclone copyto output/final/${{ matrix.image }}-latest.iso-CHECKSUM R2:ublue-ledif
